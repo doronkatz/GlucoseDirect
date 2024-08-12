@@ -42,7 +42,7 @@ struct ToggleView: View {
             return Color.clear
         }
 
-        return Color.ui.accent
+        return Color.accent
     }
 
     var body: some View {

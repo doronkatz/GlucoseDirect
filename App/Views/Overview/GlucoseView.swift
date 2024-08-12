@@ -43,7 +43,7 @@ struct GlucoseView: View {
                     Text(verbatim: warning)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 5)
-                        .background(Color.ui.red)
+                        .background(Color.red)
                         .foregroundColor(.white)
                         .cornerRadius(5)
                 } else {
@@ -56,7 +56,7 @@ struct GlucoseView: View {
             } else {
                 Text("No Data")
                     .font(.system(size: 52))
-                    .foregroundColor(Color.ui.red)
+                    .foregroundColor(Color.red)
 
                 Text(Date(), style: .time)
                     .opacity(0.5)
@@ -129,7 +129,7 @@ struct GlucoseView: View {
 
     private func getGlucoseColor(glucose: any Glucose) -> Color {
         if isAlarm(glucose: glucose) {
-            return Color.ui.red
+            return Color.red
         }
 
         return Color.primary

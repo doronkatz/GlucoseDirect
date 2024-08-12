@@ -17,7 +17,7 @@ struct ConnectionView: View {
             Section(
                 content: {
                     Link(connectionError, destination: URL(string: DirectConfig.faqURL)!)
-                        .foregroundColor(Color.ui.red)
+                        .foregroundColor(Color.red)
 
                     HStack {
                         Text("Connection error timestamp")
@@ -35,7 +35,7 @@ struct ConnectionView: View {
                 },
                 header: {
                     Label("Connection error", systemImage: "exclamationmark.triangle")
-                        .foregroundColor(Color.ui.red)
+                        .foregroundColor(Color.red)
                 }
             )
         }

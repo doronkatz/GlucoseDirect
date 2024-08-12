@@ -116,7 +116,11 @@ struct GlucoseView: View {
 
             case .systemSmall:
                 ZStack {
-                    LinearGradient(gradient: Gradient(colors: [.white, .ui.gray]), startPoint: .top, endPoint: .bottom)
+                    LinearGradient(
+                        gradient: Gradient(colors: [.white, .gray]),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
 
                     VStack(spacing: 10) {
                         if let appIcon = UIImage(named: "AppIcon") {
@@ -144,7 +148,7 @@ struct GlucoseView: View {
                             } else {
                                 Text("HIGH")
                                     .font(.system(size: 64))
-                                    .foregroundColor(Color.ui.red)
+                                    .foregroundColor(Color.red)
                             }
                         }
 

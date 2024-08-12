@@ -28,7 +28,7 @@ struct SensorView: View {
                                 Text("Use LibreLink to start the sensor")
                                     .bold()
                             }
-                            .foregroundColor(Color.ui.red)
+                            .foregroundColor(Color.red)
                         } else {
                             if let startTimestamp = sensor.startTimestamp {
                                 HStack {
@@ -175,7 +175,7 @@ private struct ColoredProgressView: View {
             ZStack(alignment: .leading) {
                 Rectangle()
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                    .foregroundColor(Color.ui.gray)
+                    .foregroundColor(Color.gray)
 
                 LinearGradient(colors: colors, startPoint: .leading, endPoint: .trailing)
                     .mask(alignment: .leading) {

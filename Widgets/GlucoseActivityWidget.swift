@@ -28,7 +28,7 @@ struct GlucoseActivityWidget: Widget {
                         Text(latestGlucose.glucoseValue.asGlucose(glucoseUnit: glucoseUnit))
                             .font(.body)
                             .fontWeight(.bold)
-                            .strikethrough(connectionState != .connected, color: Color.ui.red)
+                            .strikethrough(connectionState != .connected, color: Color.red)
 
                         Text(glucoseUnit.shortLocalizedDescription)
                             .font(.system(size: 12))
@@ -56,7 +56,7 @@ struct GlucoseActivityWidget: Widget {
                 {
                     Text(latestGlucose.glucoseValue.asGlucose(glucoseUnit: glucoseUnit))
                         .font(.body)
-                        .strikethrough(connectionState != .connected, color: Color.ui.red)
+                        .strikethrough(connectionState != .connected, color: Color.red)
                 }
             }
         }
@@ -94,7 +94,7 @@ extension GlucoseStatusContext {
 
     func getGlucoseColor(glucose: any Glucose) -> Color {
         if isAlarm(glucose: glucose) {
-            return Color.ui.red
+            return Color.red
         }
 
         return Color.primary
@@ -137,7 +137,7 @@ struct DynamicIslandCenterView: View, GlucoseStatusContext {
                     Text(verbatim: warning)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 5)
-                        .background(Color.ui.red)
+                        .background(Color.red)
                         .foregroundColor(.white)
                 } else {
                     HStack(spacing: 40) {
@@ -149,7 +149,7 @@ struct DynamicIslandCenterView: View, GlucoseStatusContext {
             } else {
                 Text("No Data")
                     .font(.system(size: 34))
-                    .foregroundColor(Color.ui.red)
+                    .foregroundColor(Color.red)
 
                 Text(Date(), style: .time)
                     .opacity(0.5)
@@ -190,7 +190,7 @@ struct GlucoseActivityView: View, GlucoseStatusContext {
                     if let warning = warning {
                         HStack {
                             Image(systemName: "exclamationmark.triangle")
-                                .foregroundColor(Color.ui.red)
+                                .foregroundColor(Color.red)
                             
                             Text(verbatim: warning)
                                 .bold()
@@ -245,7 +245,7 @@ struct GlucoseActivityView: View, GlucoseStatusContext {
                     Text("No Data")
                         .bold()
                         .font(.system(size: 35))
-                        .foregroundColor(Color.ui.red)
+                        .foregroundColor(Color.red)
 
                     Text(Date(), style: .time)
                         .opacity(0.5)

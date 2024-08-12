@@ -177,33 +177,33 @@ struct ChartViewCompatibility: View {
         enum alarm {
             static let strokeStyle = StrokeStyle(lineWidth: lineWidth)
 
-            static var color: Color { Color.ui.red.opacity(opacity) }
+            static var color: Color { Color.red.opacity(opacity) }
         }
 
         enum target {
             static let strokeStyle = StrokeStyle(lineWidth: lineWidth)
 
-            static var color: Color { Color.ui.green.opacity(opacity) }
+            static var color: Color { Color.green.opacity(opacity) }
         }
 
         enum now {
             static let strokeStyle = StrokeStyle(lineWidth: lineWidth, dash: [4, 8])
 
-            static var color: Color { Color.ui.blue.opacity(opacity) }
+            static var color: Color { Color.blue.opacity(opacity) }
         }
 
         enum dot {
             static let size: CGFloat = 3.5
 
             static var sensorGlucoseColor: Color { Color(.sRGB, red: 0.21, green: 0.27, blue: 0.31) | Color(.sRGB, red: 0.90, green: 0.89, blue: 0.89) }
-            static var bloodGlucoseColor: Color { Color.ui.red }
+            static var bloodGlucoseColor: Color { Color.red }
         }
 
         enum line {
             static var size = 2.5
 
             static var sensorGlucoseColor: Color { Color(.sRGB, red: 0.21, green: 0.27, blue: 0.31) | Color(.sRGB, red: 0.90, green: 0.89, blue: 0.89) }
-            static var bloodGlucoseColor: Color { Color.ui.red }
+            static var bloodGlucoseColor: Color { Color.red }
         }
 
         enum x {

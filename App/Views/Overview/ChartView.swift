@@ -86,7 +86,7 @@ struct ChartView: View {
                                         .font(.footnote)
                                         .padding(.horizontal, 10)
                                         .padding(.vertical, 5)
-                                        .background(Color.ui.blue)
+                                        .background(Color.blue)
                                         .foregroundColor(Color.white)
                                         .cornerRadius(5)
                                     }
@@ -99,7 +99,7 @@ struct ChartView: View {
                                         .font(.footnote)
                                         .padding(.horizontal, 10)
                                         .padding(.vertical, 5)
-                                        .background(Color.ui.orange)
+                                        .background(Color.orange)
                                         .foregroundColor(Color.white)
                                         .cornerRadius(5)
                                     }
@@ -117,7 +117,7 @@ struct ChartView: View {
                                     .font(.footnote)
                                     .padding(.horizontal, 10)
                                     .padding(.vertical, 5)
-                                    .background(Color.ui.red)
+                                    .background(Color.red)
                                     .foregroundColor(Color.white)
                                     .cornerRadius(5)
                                 }
@@ -149,15 +149,15 @@ struct ChartView: View {
                     label: {
                         Circle()
                             .if(isSelectedZoomLevel(level: zoom.level)) {
-                                $0.fill(Color.ui.label)
+                                $0.fill(Color.label)
                             } else: {
-                                $0.stroke(Color.ui.label)
+                                $0.stroke(Color.label)
                             }
                             .frame(width: 12, height: 12)
 
                         Text(zoom.name)
                             .font(.subheadline)
-                            .foregroundColor(Color.ui.label)
+                            .foregroundColor(Color.label)
                     }
                 )
                 .buttonStyle(.plain)
@@ -173,11 +173,11 @@ struct ChartView: View {
                 .foregroundStyle(.clear)
 
             RuleMark(y: .value("Lower limit", alarmLow))
-                .foregroundStyle(Color.ui.red)
+                .foregroundStyle(Color.red)
                 .lineStyle(Config.ruleStyle)
 
             RuleMark(y: .value("Upper limit", alarmHigh))
-                .foregroundStyle(Color.ui.red)
+                .foregroundStyle(Color.red)
                 .lineStyle(Config.ruleStyle)
 
             ForEach(smoothSensorGlucoseSeries) { value in
@@ -186,7 +186,7 @@ struct ChartView: View {
                     y: .value("Glucose", value.value)
                 )
                 .interpolationMethod(.monotone)
-                .foregroundStyle(Color.ui.blue)
+                .foregroundStyle(Color.blue)
                 .lineStyle(Config.lineStyle)
             }
 
@@ -196,7 +196,7 @@ struct ChartView: View {
                     y: .value("Glucose", value.value)
                 )
                 .symbolSize(Config.symbolSize)
-                .foregroundStyle(Color.ui.red)
+                .foregroundStyle(Color.red)
             }
 
             ForEach(insulinSeries) { value in
@@ -208,14 +208,14 @@ struct ChartView: View {
                     .symbolSize(value.value.map(from: 0...20, to: 0...100))
                     .annotation {
                         Text(value.value.asInsulin())
-                            .foregroundStyle(Color.ui.orange)
+                            .foregroundStyle(Color.orange)
                             .padding(.horizontal, 2.5)
                             .background(.white.opacity(0.5))
                             .cornerRadius(2)
                             .bold()
                             .font(.caption)
                     }
-                    .foregroundStyle(Color.ui.orange)
+                    .foregroundStyle(Color.orange)
                 } else {
 //                    AreaMark(
 //                        x: .value("Time", value.starts),
@@ -225,7 +225,7 @@ struct ChartView: View {
 //                    )
 //                    .opacity(0.25)
 //                    .interpolationMethod(.stepEnd)
-//                    .foregroundStyle(Color.ui.orange)
+//                    .foregroundStyle(Color.orange)
 //
 //                    AreaMark(
 //                        x: .value("Time", value.ends),
@@ -235,7 +235,7 @@ struct ChartView: View {
 //                    )
 //                    .opacity(0.25)
 //                    .interpolationMethod(.stepEnd)
-//                    .foregroundStyle(Color.ui.orange)
+//                    .foregroundStyle(Color.orange)
                     
                     RectangleMark(
                         xStart: .value("Starts", value.starts),
@@ -246,14 +246,14 @@ struct ChartView: View {
                     .opacity(0.25)
                     .annotation(position: .overlay, alignment: .bottom) {
                         Text(value.value.asInsulin())
-                            .foregroundStyle(Color.ui.orange)
+                            .foregroundStyle(Color.orange)
                             .padding(.horizontal, 2.5)
                             .background(.white.opacity(0.5))
                             .cornerRadius(2)
                             .bold()
                             .font(.caption)
                     }
-                    .foregroundStyle(Color.ui.orange)
+                    .foregroundStyle(Color.orange)
                 }
             }
 
@@ -267,7 +267,7 @@ struct ChartView: View {
                         )
                         .interpolationMethod(.monotone)
                         .opacity(0.5)
-                        .foregroundStyle(Color.ui.orange)
+                        .foregroundStyle(Color.orange)
                         .lineStyle(Config.rawLineStyle)
                     }
                 }
@@ -280,7 +280,7 @@ struct ChartView: View {
                     //.symbol(.square)
                     .opacity(0.75)
                     .symbolSize(Config.selectionSize)
-                    .foregroundStyle(Color.ui.orange)
+                    .foregroundStyle(Color.orange)
                 }
             }
 
@@ -292,7 +292,7 @@ struct ChartView: View {
                 //.symbol(.square)
                 .opacity(0.75)
                 .symbolSize(Config.selectionSize)
-                .foregroundStyle(Color.ui.blue)
+                .foregroundStyle(Color.blue)
             }
 
             if let selectedPointInfo = selectedBloodPoint {
@@ -303,7 +303,7 @@ struct ChartView: View {
                 //.symbol(.square)
                 .opacity(0.75)
                 .symbolSize(Config.selectionSize)
-                .foregroundStyle(Color.ui.red)
+                .foregroundStyle(Color.red)
             }
 
             if let endMarker = endMarker {
@@ -316,7 +316,7 @@ struct ChartView: View {
             AxisMarks(values: .stride(by: .hour, count: labelEvery)) { _ in
                 AxisGridLine(stroke: Config.axisStyle)
                 AxisTick(length: 4, stroke: Config.tickStyle)
-                    .foregroundStyle(Color.ui.gray)
+                    .foregroundStyle(Color.gray)
                 AxisValueLabel(format: .dateTime.hour(.defaultDigits(amPM: .narrow)), anchor: .top)
             }
         }
@@ -326,7 +326,7 @@ struct ChartView: View {
 
                 if let glucoseValue = value.as(Double.self), glucoseValue > 0 {
                     AxisTick(length: 4, stroke: Config.tickStyle)
-                        .foregroundStyle(Color.ui.gray)
+                        .foregroundStyle(Color.gray)
                     AxisValueLabel()
                 }
             }

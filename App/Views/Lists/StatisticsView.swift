@@ -69,15 +69,15 @@ struct StatisticsView: View {
                                 label: {
                                     Circle()
                                         .if(isSelectedChartLevel(days: level.days)) {
-                                            $0.fill(Color.ui.label)
+                                            $0.fill(Color.label)
                                         } else: {
-                                            $0.stroke(Color.ui.label)
+                                            $0.stroke(Color.label)
                                         }
                                         .frame(width: 12, height: 12)
 
                                     Text(verbatim: level.name)
                                         .font(.subheadline)
-                                        .foregroundColor(Color.ui.label)
+                                        .foregroundColor(Color.label)
                                 }
                             )
                             .disabled(level.days > glucoseStatistics.maxDays)
